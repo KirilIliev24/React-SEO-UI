@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useContext, useState } from "react";
+import { KeywordsContext } from "./Contexts/KeywordsContext";
 
 function App() {
+
+  const [word, setWord] = useState("");
+  const {keywords, setKeywords} = useContext(KeywordsContext);
+
+  const updateWord = e =>{
+    setWord(e.target.value);
+  }
+
+  const addKeyword = e =>{
+    e.preventDefault();
+    setKeywords(previousKeywords => [...previousKeywords, {id: 3, keyword: word}]);
+    setWord("");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          {keywords.map(keyword => (
+              <h1>{keyword.keyword}</h1>
+          ))}
+          <input type = "text" name = "word" value = {word} onChange = {updateWord}></input>   
+          <button onClick = {addKeyword} >ADD KEYWORD</button>
+      </div>
   );
 }
 

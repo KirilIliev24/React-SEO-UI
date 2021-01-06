@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { KeywwordsProvider } from "./Contexts/KeywordsContext";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <KeywwordsProvider>
+      <App />
+    </KeywwordsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
