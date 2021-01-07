@@ -1,18 +1,14 @@
 
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { AddKeyword } from "./Components/AddKeyword";
-import { KeywordsContext } from "./Contexts/KeywordsContext";
+import { SelectKeyword } from "./Components/SelectKeyword";
 
 function App() {
 
-  const {keywords, setKeywords} = useContext(KeywordsContext);
-
   return (
       <div>
+          <SelectKeyword/>
           <AddKeyword/>
-          {keywords.map(keyword => (
-              <h1>{keyword.keyword}</h1>
-          ))}
       </div>
   );
 }
