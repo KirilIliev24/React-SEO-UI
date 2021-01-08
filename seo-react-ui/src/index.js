@@ -4,13 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { KeywwordsProvider } from "./Contexts/KeywordsContext";
+import { LinksProvider } from "./Contexts/LinksContext";
+import "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <KeywwordsProvider>
-      <App />
-    </KeywwordsProvider>
+    <LinksProvider>
+      <KeywwordsProvider>
+        <App />
+      </KeywwordsProvider>
+    </LinksProvider>
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

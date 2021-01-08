@@ -2,6 +2,7 @@
 import { useContext, useState} from "react";
 import { KeywordsContext } from "../Contexts/KeywordsContext";
 import axios from "axios";
+import "../Css/AddKeyword.css";
 
 export const AddKeyword = () =>{
 
@@ -17,14 +18,16 @@ export const AddKeyword = () =>{
     const addKeyword = e =>{
       e.preventDefault();
       //add post keyword
-      setKeywords(previousKeywords => [...previousKeywords, {id: 3, keyword: word}]);
+      setKeywords(previousKeywords => [...previousKeywords, word]);
       setWord("");
     }
 
     return (
-        <div>
+        <div className = "row">
+          <div className = "col-md-12">
             <input type = "text" name = "word" value = {word} onChange = {updateWord}></input>   
-            <button onClick = {addKeyword} >ADD KEYWORD</button>
+            <button className = "addBtn" onClick = {addKeyword} >ADD KEYWORD</button>
+          </div> 
         </div>
     );
 }
