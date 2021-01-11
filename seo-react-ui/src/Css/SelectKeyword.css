@@ -2,13 +2,21 @@
 
 .dropDown{
     margin-top: 10px;
-    width: 80%;
-    left: 12%;
+    width: 90%;
+    /* left: 12%; */
+    margin-left: 20px;
     margin-right: -10px;
 }
 
 .getBtn{
     height: 40px;
+    margin-top: 10px;
     width: 80px;
 }
+
+.startDatePicker{
+    margin-left: 20px;
+    width: 100%;
+}
+
 
