@@ -17,21 +17,12 @@ export const SelectKeyword = () =>{
     const [startDate, setStartDate] = useState(new Date(2000, 1, 1));   
     const [endDate, setEndDate] = useState(new Date());   
     const [chooseDatePanel, setChooseDatePanel] = useState(false);
-    const {keywords, setKeywords} = useContext(KeywordsContext);
-    const {links, setLinks} = useContext(LinksContext);
+    const {keywords, getAllKeywords} = useContext(KeywordsContext);
+    const {links, getLinks} = useContext(LinksContext);
    
+
     useEffect( async() => {
-            await axios
-            .get(
-                `https://localhost:44325/SearchEngine/getKeywords`,
-                {headers: {}})
-            .then((result) => {
-                const data = result.data;
-                setKeywords(data);
-                setOptions(data);
-                console.log(keywords.data.lenght());
-            })
-            .catch((error) => console.log(error));
+        getAllKeywords();
     }, [])
 
     useEffect(() => {
@@ -39,26 +30,8 @@ export const SelectKeyword = () =>{
     }, [keywords])
 
 
-    const getLinks = async() =>{
-        await axios
-        .get(
-            `/getByKeyword/${selectedWord}`,
-            {headers: 
-                {
-                    "startDate": `${startDate.toLocaleDateString()}`,
-                    "endDate": `${endDate.toLocaleDateString()}`
-                }
-            })
-        .then((result) => {
-            const data = result.data;
-            setLinks(data);
-        })
-        .catch((error) => console.log(error));
-        console.log(selectedWord);
-        console.log(startDate.toLocaleDateString());
-        console.log(endDate.toLocaleDateString());
-
-
+    const getLinksBtn = () =>{
+        getLinks(selectedWord, startDate, endDate);
     }
 
     const chooseDate = () =>{
@@ -74,7 +47,7 @@ export const SelectKeyword = () =>{
                     <button className = "getBtn" onClick = {chooseDate}>Date</button>
                 </div>
                 <div className = "col-md-2">
-                    <button className = "getBtn" onClick = {getLinks}>Get links</button>
+                    <button className = "getBtn" onClick = {getLinksBtn}>Get links</button>
                 </div>
               
                 {chooseDatePanel ? 

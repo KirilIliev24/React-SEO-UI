@@ -1,18 +1,29 @@
-import { useContext} from "react";
+import { useContext, useEffect, useState} from "react";
 
 import { LinksContext } from "../Contexts/LinksContext";
 import { LinkComponent } from "./LinkComponent";
 
 export const LinkList = () =>{
 
-    const {links, setLinks} = useContext(LinksContext);
+    const [loading, setLoading] = useState(false);
+    const {links} = useContext(LinksContext);
 
     return(
      
         <div>
-               {links.map(link => {
-                   <LinkComponent link = {link}/>
+            {loading ? 
+             <div>
+              <p>Loading...</p>
+            </div>
+            : 
+            <div className = "container">
+                 {links.map((link, i) => {
+                     return(
+                        <LinkComponent key = {i} link = {link}/>
+                    )   
                })}
+            </div> 
+            }
         </div>
     );
 

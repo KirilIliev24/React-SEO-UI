@@ -7,17 +7,19 @@ import { KeywwordsProvider } from "./Contexts/KeywordsContext";
 import { LinksProvider } from "./Contexts/LinksContext";
 import "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
+import { LinkDetailsProvider } from './Contexts/LinkDetailsContext';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <LinksProvider>
-      <KeywwordsProvider>
-        <App />
-      </KeywwordsProvider>
-    </LinksProvider>
-  
+    <LinkDetailsProvider>
+      <LinksProvider>
+        <KeywwordsProvider>
+          <App />
+        </KeywwordsProvider>
+      </LinksProvider>
+    </LinkDetailsProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
