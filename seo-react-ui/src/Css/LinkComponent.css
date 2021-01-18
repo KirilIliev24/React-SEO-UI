@@ -9,3 +9,14 @@
 a, p{
     overflow-wrap: break-word;
 }
+
+.navBtn{
+    background-color: cornsilk;
+    width: inherit;
+    border: solid black 1px;
+    padding: 2px 5px;
+    color: black;
+}
+.navBtn:hover{
+    text-decoration: none;
+}

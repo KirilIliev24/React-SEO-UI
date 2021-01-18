@@ -1,0 +1,61 @@
+
+
+.spinner{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.container{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.chartContainer{
+    
+    border: black solid 3px;
+}
+
+.centerChart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.datePickersDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.startDate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+.endDate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+label{
+    background-color: brown;
+    margin-right: 0px;
+}
+
+.chartBtnDiv{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button{
+     width: 30%;
+     height: 35px;
+ }

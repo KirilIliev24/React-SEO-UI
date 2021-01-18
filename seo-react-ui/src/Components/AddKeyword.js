@@ -23,11 +23,13 @@ export const AddKeyword = () =>{
     }
 
     return (
-        <div className = "row">
-          <div className = "col-md-12">
-            <input type = "text" name = "word" value = {word} onChange = {updateWord}></input>   
-            <button className = "addBtn" onClick = {addKeyword} >ADD KEYWORD</button>
+        <div className = "row inputComponentDiv">
+          <div className = "col-lg-5 inputDiv">
+            <input className = "inputField" type = "text" name = "word" value = {word} onChange = {updateWord}></input>   
           </div> 
+          <div className = "col-lg-5 addBtnDiv">
+            <button className = "addBtn" onClick = {addKeyword} >ADD KEYWORD</button>
+          </div>
         </div>
     );
 }

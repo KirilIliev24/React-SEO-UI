@@ -2,16 +2,18 @@
 import { AddKeyword } from "./Components/AddKeyword";
 import { LinkList } from "./Components/LinkList";
 import { SelectKeyword } from "./Components/SelectKeyword";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./Css/App.css";
 import Header from "./Layout/Header";
+import {LinkDetailsPage} from "./Components/Pages/LinkDetailsPage"
 
 function App() {
 
   return (
-      <div className = "contaier">
-        <div className = "row">
-          <Header/>
-        </div>
+    <Router>
+       <Header/>
+      <Route path = "/" exact >
+      <div className = "container">
         <div className = "row">
           <div className = "col-md-6">
             <SelectKeyword/>
@@ -22,8 +24,13 @@ function App() {
         </div>
         <div>
             <LinkList/>
-          </div>  
+        </div>  
       </div>
+      </Route>
+      <Route path = "/linkDetails" component = {LinkDetailsPage}></Route>
+    </Router>
+     
+     
   );
 }
 

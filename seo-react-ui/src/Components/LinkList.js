@@ -8,6 +8,17 @@ export const LinkList = () =>{
     const [loading, setLoading] = useState(false);
     const {links} = useContext(LinksContext);
 
+    useEffect(() => {
+        if(links.lenght === 0)
+        {
+            setLoading(true);
+        }
+        else
+        {
+            setLoading(false)
+        }
+    }, [])
+
     return(
      
         <div>

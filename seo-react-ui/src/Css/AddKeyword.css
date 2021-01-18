@@ -1,13 +1,33 @@
 
-input{
+
+.inputComponentDiv{
+    display: inline-block;
+}
+
+.inputDiv{  
+    /* background-color: orange; */
     height: 40px;
-    width: 60%;
+    width: inherit;
     margin-top: 10px;
     margin-left: 20px;
 }
 
-.addBtn{
+.addBtnDiv{
+    /* background-color: yellow; */
     height: 40px;
+    width: 100%;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
+}
+
+
+.addBtn{
+    height: inherit;
+    width: 180px;
+    margin: 0px;
+}
+
+.inputField{
+    width: 180px;
+    height: inherit;
 }

@@ -12,6 +12,7 @@ import "../Css/SelectKeyword.css";
 
 export const SelectKeyword = () =>{
 
+    const [isLoading, setIsLoading] = useState(false);
     const [options, setOptions] = useState( [] );
     const [selectedWord, setSelectedWord] = useState("");
     const [startDate, setStartDate] = useState(new Date(2000, 1, 1));   
@@ -22,7 +23,8 @@ export const SelectKeyword = () =>{
    
 
     useEffect( async() => {
-        getAllKeywords();
+        await getAllKeywords();
+        setIsLoading(false);
     }, [])
 
     useEffect(() => {
@@ -30,8 +32,10 @@ export const SelectKeyword = () =>{
     }, [keywords])
 
 
-    const getLinksBtn = () =>{
-        getLinks(selectedWord, startDate, endDate);
+    const getLinksBtn = async() =>{
+        setIsLoading(true);
+        await getLinks(selectedWord, startDate, endDate);
+        setIsLoading(false);
     }
 
     const chooseDate = () =>{
@@ -40,27 +44,30 @@ export const SelectKeyword = () =>{
        
     return (
             <div className = "row centerDiv">
-                <div className = "col-md-8">
+                <div className = "col-md-6">
                     <Dropdown className = "dropDown" onChange = {word => setSelectedWord(word.label)} options = {options}  value = "Choose keyword" />
                 </div>
-                <div className = "col-md-2">
+                <div className = "col-md-6 buttons">
                     <button className = "getBtn" onClick = {chooseDate}>Date</button>
+                    <button className = "getBtn" onClick = {getLinksBtn} disabled = {isLoading}>Get links</button>
+
                 </div>
-                <div className = "col-md-2">
-                    <button className = "getBtn" onClick = {getLinksBtn}>Get links</button>
-                </div>
+                {/* <div className = "col-md-2">
+                </div> */}
               
                 {chooseDatePanel ? 
                     <div className = "container">
                         <div className = "row">
-                            <div className = "col-md-5">
+                            <div className = "col-md-4">
+                                <label>Start date:</label>
                                 <DatePicker 
                                     className = "startDatePicker"
                                     selected = {startDate}
                                     dateFormat="P"
                                     onChange = {date => setStartDate(date)}/>
                             </div>
-                            <div className = "col-md-5">
+                            <div className = "col-md-4">
+                                <label>End date:</label>
                                 <DatePicker 
                                     className = "startDatePicker"
                                     selected = {endDate}

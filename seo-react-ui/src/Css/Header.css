@@ -3,12 +3,11 @@ header{
     width: 100%;
     background-color: darkblue;
     color: wheat;
-    position: relative;
 }
 
 h1{
-    position: absolute;
-    top: 25%;
-    left: 47%;
-    margin: 0px 0 0 -50px;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
