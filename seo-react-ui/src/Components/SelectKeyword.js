@@ -44,10 +44,10 @@ export const SelectKeyword = () =>{
        
     return (
             <div className = "row centerDiv">
-                <div className = "col-md-6">
+                <div className = "col-lg-6 dropdownDiv">
                     <Dropdown className = "dropDown" onChange = {word => setSelectedWord(word.label)} options = {options}  value = "Choose keyword" />
                 </div>
-                <div className = "col-md-6 buttons">
+                <div className = "col-lg-6 buttons">
                     <button className = "getBtn" onClick = {chooseDate}>Date</button>
                     <button className = "getBtn" onClick = {getLinksBtn} disabled = {isLoading}>Get links</button>
 

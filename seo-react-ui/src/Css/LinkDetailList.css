@@ -33,20 +33,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    
+    align-items: center;
 }
 
 .endDate{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
-label{
-    background-color: brown;
-    margin-right: 0px;
+.endDate label{
+    align-self: center;
 }
 
 .chartBtnDiv{

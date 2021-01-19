@@ -38,7 +38,7 @@ export const LinkDetailsProvider = ({children}) =>{
                 {
                     "url" : linkOne,
                     "urlTwo" : linkTwo,
-                    "date" : `${date.toLocaleDateString()}`
+                    "singleDate" : `${date.toLocaleDateString()}`
                 }})
         .then((result) => {
             const data = result.data;
@@ -53,7 +53,9 @@ export const LinkDetailsProvider = ({children}) =>{
     const resetData = () =>{
         console.log("Component unmount context");
         setLinkDetails([]);
+        setExternalLinks([]);
     }
+
 
     return(
         <LinkDetailsContext.Provider value = {{linkDetails, getLinksDetails, resetData, externalLinks, getExternalLinks}}>

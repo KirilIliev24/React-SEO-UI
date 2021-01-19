@@ -14,7 +14,7 @@ function App() {
        <Header/>
       <Route path = "/" exact >
       <div className = "container">
-        <div className = "row">
+        <div className = "row firstRow">
           <div className = "col-md-6">
             <SelectKeyword/>
           </div>

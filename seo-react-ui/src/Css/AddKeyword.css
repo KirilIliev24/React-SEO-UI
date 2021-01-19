@@ -1,7 +1,7 @@
 
 
 .inputComponentDiv{
-    display: inline-block;
+    justify-content: center;
 }
 
 .inputDiv{  
@@ -30,4 +30,13 @@
 .inputField{
     width: 180px;
     height: inherit;
+}
+
+@media only screen and (min-width: 1000px){
+    .inputDiv{  
+        height: 40px;
+        width: inherit;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
 }

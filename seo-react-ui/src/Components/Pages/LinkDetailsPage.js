@@ -56,6 +56,9 @@ export const LinkDetailsPage = () =>{
         setIsLoading(true);
         await getLinksDetails(dataPass.dataPass.link, dataPass.dataPass.keyword, new Date(2000, 1, 1), new Date());
         setIsLoading(false);
+    }, [])
+
+    useEffect(() => {
         return () => {
             setIsLoading(true);
             console.log("Component unmount");
@@ -65,7 +68,7 @@ export const LinkDetailsPage = () =>{
 
     const getLinksDetailsByDate = async() => {
         setIsLoading(true);
-        resetData();
+        //resetData();
         resetLocalData();
         await getLinksDetails(dataPass.dataPass.link, dataPass.dataPass.keyword, startDate, endDate);
         setIsLoading(false);
@@ -102,7 +105,7 @@ export const LinkDetailsPage = () =>{
                         </div>
                     </div>
                     <div className = "row datePickersDiv">
-                        <div className = "col-md-6 startDate">
+                        <div className = "col-md-3 startDate">
                             <label>Start date:</label>
                             <DatePicker 
                                 className = "startDatePicker"
@@ -110,10 +113,10 @@ export const LinkDetailsPage = () =>{
                                 dateFormat="P"
                                 onChange = {date => setStartDate(date)}/>
                         </div>
-                        <div className = "col-md-6 endDate">
+                        <div className = "col-md-3 endDate">
                             <label>End date:</label>
                             <DatePicker 
-                                className = "startDatePicker"
+                                className = "endDatePicker"
                                 selected = {endDate}
                                 dateFormat="P"
                                 onChange = {date => setEndDate(date)}/>

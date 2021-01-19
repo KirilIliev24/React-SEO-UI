@@ -1,0 +1,41 @@
+
+.myContainer{
+    text-align: center;
+}
+
+.extLinkDisplay{
+    width: inherit;
+    height: fit-content;
+    border: solid black 2px;
+    margin: 10px 10px;
+    flex-direction: column;
+}
+
+.dateDiv{
+    flex-direction: column;    
+}
+
+.dropDownDiv{
+    justify-content: center;
+}
+
+.linksDropDown{
+    margin: auto;
+    width: 250px;
+  
+}
+
+.extDatePicker{
+    width: 250px;
+    height: 35px;
+}
+
+.getLinksBtnDiv{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+td{
+    border: solid black 1px;
+    height: 30px;
+}
