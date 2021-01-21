@@ -13,6 +13,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "../../Css/LinkDetailList.css"
 import { ExternalLinks } from "../ExternalLinks";
+import { MeaningfulText } from "../MeaningfulText";
 
 export const LinkDetailsPage = () =>{
 
@@ -131,6 +132,9 @@ export const LinkDetailsPage = () =>{
             }
             <div className = "container">
                 <ExternalLinks link = {dataPass.dataPass.link}/>
+            </div>
+            <div className = "container">
+                <MeaningfulText link = {dataPass.dataPass.link}/>
             </div>
         </div>
        

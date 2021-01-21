@@ -18,6 +18,10 @@
 .dropDownDiv{
     justify-content: center;
 }
+.dropDownDiv label{
+    align-self: center;
+    width: auto;
+}
 
 .linksDropDown{
     margin: auto;
@@ -38,4 +42,8 @@
 td{
     border: solid black 1px;
     height: 30px;
+}
+
+.datesRow{
+    justify-content: center;
 }

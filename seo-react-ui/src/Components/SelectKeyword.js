@@ -52,9 +52,6 @@ export const SelectKeyword = () =>{
                     <button className = "getBtn" onClick = {getLinksBtn} disabled = {isLoading}>Get links</button>
 
                 </div>
-                {/* <div className = "col-md-2">
-                </div> */}
-              
                 {chooseDatePanel ? 
                     <div className = "container">
                         <div className = "row">

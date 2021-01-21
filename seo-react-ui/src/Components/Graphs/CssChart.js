@@ -11,9 +11,9 @@ export const CssChart = (props) =>{
                     labels: props.dates,
                     datasets: [
                         {
-                            labse: "Css %",
+                            label: "Css %",
                             data: props.css,
-                            fill: false  
+                            fill: false
                         }
                     ]
                 }}

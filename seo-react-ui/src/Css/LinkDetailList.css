@@ -34,6 +34,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
+}
+.startDate label{
+    width: auto;
+    align-self: center;
 }
 
 .endDate{
@@ -44,6 +49,7 @@
 }
 
 .endDate label{
+    width: auto;
     align-self: center;
 }
 

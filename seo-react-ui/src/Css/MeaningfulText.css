@@ -1,0 +1,52 @@
+
+.textContainer{
+    border: solid black 2px;
+    margin-bottom: 30px;
+}
+
+h3{
+    text-align: center;
+}
+
+textarea{
+    width: inherit;
+}
+
+.dateTextRow{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.dateTextDiv{
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.btnTextDiv{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.meanTextDate{
+    margin: auto;
+    width: 250px;
+    height: 35px;
+}
+
+.textBtn{
+    width: 250px;
+}
+
+.textParagraph{
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.keywordCountRow{
+    justify-content: center;
+    text-align: center;
+}
+

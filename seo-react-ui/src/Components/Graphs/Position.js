@@ -12,7 +12,7 @@ export const Position = (props) =>{
                     labels: props.dates,
                     datasets: [
                         {
-                            labse: "Position",
+                            label: "Position",
                             data: props.positions,
                             fill: false  
                         }

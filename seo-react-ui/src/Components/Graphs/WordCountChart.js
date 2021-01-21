@@ -11,7 +11,7 @@ export const WordCountChart = (props) =>{
                     labels: props.dates,
                     datasets: [
                         {
-                            labse: "Word count",
+                            label: "Word count",
                             data: props.wordCount    
                         }
                     ]

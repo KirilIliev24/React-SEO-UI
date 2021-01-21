@@ -5,8 +5,13 @@
 }
 
 
+.dropDownDiv{
+    border-radius: 2rem;
+    overflow: hidden;
+}
 
 .dropDown{
+    border-radius: 2rem;
     margin-top: 10px;
     width: 90%;
     /* left: 12%; */
@@ -16,6 +21,7 @@
 
 
 .getBtn{
+    border-radius: 2rem;
     height: 40px;
     margin-top: 10px;
     width: 80px;
@@ -23,12 +29,14 @@
 }
 
 .startDatePicker{
+    border-radius: 2rem;
     margin-left: 20px;
     width: 100%;
 }
 
 
 label{
+    width: inherit;
     margin-left: 20px;
 }
 

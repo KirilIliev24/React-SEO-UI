@@ -70,7 +70,7 @@ export const ExternalLinks = (props) =>{
         <div className = "container myContainer">
             <h3>External links</h3>
             {isLoading ? "Loading" :
-                 <div className = "row">
+                    <div className = "row">
                     <div className = "col-md-12">
                         <div className = "extLinkDisplay">
                             <table>
@@ -80,21 +80,18 @@ export const ExternalLinks = (props) =>{
                     </div> 
                  </div>
             }
-            
-       
-
-        <div className = "row">
-            <div className = "col-md-6 dateDiv">
-                <div> <label>Date:</label></div>
+                 
+        <div className = "row datesRow">
+            <div className = "col-md-4 dateDiv">
+                <div><label>Date:</label></div>
                 <DatePicker 
                     className = "extDatePicker"
                     selected = {date}
                     dateFormat="P"
                     onChange = {date => setDate(date)}/>
             </div>
-            <div className = "col-md-6 dropDownDiv">
+            <div className = "col-md-4 dropDownDiv">
                 <label>Second link:</label>
-               
                 <Dropdown className = "linksDropDown" onChange = {linkTwo => setSecondLink(linkTwo)} options = {dropDownLinks}  value = "Choose second link"/>
             </div>
           </div>

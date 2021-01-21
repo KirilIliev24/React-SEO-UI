@@ -8,6 +8,14 @@ export const LinkDetailsContext = createContext();
 export const LinkDetailsProvider = ({children}) =>{
     const [linkDetails, setLinkDetails] = useState([]);
     const [externalLinks, setExternalLinks] = useState([]);
+    const [meaningfulText, setMeaningfulText] = useState([
+        {
+            text: "",
+            keyword: "",
+            keywordsInText: 0,
+            keywordsInMetaTags: 0
+        }
+    ]);
 
     const getLinksDetails = async(link, keyword, startDate, endDate) =>{
         await axios
@@ -50,15 +58,42 @@ export const LinkDetailsProvider = ({children}) =>{
         console.log(`External links for ${linkOne}\n and \n ${linkTwo}`);
     } 
 
+    const getMeaningfulText = async(link, date) =>{
+        await axios
+        .get(
+            `/SearchEngine/getMeaningfulText`,
+            {headers: 
+                {
+                    "url" : link,
+                    "singleDate" : `${date.toLocaleDateString()}`
+                }})
+        .then((result) => {
+            const data = result.data;
+            setMeaningfulText(data);
+           
+        })
+        .catch((error) => console.log(error));
+
+        console.log(`Meaningful text for ${link}`);
+    }
+
     const resetData = () =>{
         console.log("Component unmount context");
         setLinkDetails([]);
         setExternalLinks([]);
+        setMeaningfulText([
+            {
+                text: "",
+                keyword: "",
+                keywordsInText: 0,
+                keywordsInMetaTags: 0
+            }
+        ]);
     }
 
 
     return(
-        <LinkDetailsContext.Provider value = {{linkDetails, getLinksDetails, resetData, externalLinks, getExternalLinks}}>
+        <LinkDetailsContext.Provider value = {{linkDetails, getLinksDetails, resetData, externalLinks, getExternalLinks, meaningfulText, getMeaningfulText}}>
             {children}
         </LinkDetailsContext.Provider>
     )
