@@ -11,6 +11,7 @@
 }
 
 .dropDown{
+    border: black solid 2px;
     border-radius: 2rem;
     margin-top: 10px;
     width: 90%;
@@ -19,12 +20,34 @@
     /* margin-right: -10px; */
 }
 
+.myControlClassName{
+    border-radius: 2rem;
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
+    
+}
+
+.myPlaceholderClassName{
+    font-size: 16px;
+    font-weight: 500;   
+}
+
+.myMenuClassName{
+    border-radius: 2rem;
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
+}
+/* .myMenuClassName:active{
+    background-color: crimson;
+} */
 
 .getBtn{
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
     border-radius: 2rem;
     height: 40px;
     margin-top: 10px;
-    width: 80px;
+    width: 85px;
     margin-left: 20px;
 }
 
@@ -40,3 +63,12 @@ label{
     margin-left: 20px;
 }
 
+@media only screen and (max-width: 1000px){
+    .getBtn{
+        border-radius: 2rem;
+        height: 40px;
+        margin-top: 10px;
+        width: 40%;
+        margin-left: 20px;
+    }
+}

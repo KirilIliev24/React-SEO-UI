@@ -14,7 +14,8 @@ export const Position = (props) =>{
                         {
                             label: "Position",
                             data: props.positions,
-                            fill: false  
+                            fill: false, 
+                            // backgroundColor: rgba(0, 0, 0, 0.1)
                         }
                         
                     ]

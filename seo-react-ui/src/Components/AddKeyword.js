@@ -23,13 +23,28 @@ export const AddKeyword = () =>{
     }
 
     return (
+      <div className = "container-fluid">
         <div className = "row inputComponentDiv">
-          <div className = "col-lg-5 inputDiv">
-            <input className = "inputField" type = "text" name = "word" value = {word} onChange = {updateWord}></input>   
+          <div className = "col-lg-5 inputComponentDiv">
+            <div className = "inputDiv">
+              <input 
+                className = "inputField" 
+                placeholder = "Keywords"
+                type = "text" 
+                name = "word" 
+                value = {word} 
+                onChange = {updateWord}>
+              </input>   
+            </div>
+            <div className = "addBtnXSDiv">
+              <button className = "addBtnXS" onClick = {addKeyword} >Add keyword</button>
+            </div>
           </div> 
           <div className = "col-lg-5 addBtnDiv">
-            <button className = "addBtn" onClick = {addKeyword} >ADD KEYWORD</button>
+            <button className = "addBtn" onClick = {addKeyword} >Add keyword</button>
           </div>
         </div>
+      </div>
+        
     );
 }

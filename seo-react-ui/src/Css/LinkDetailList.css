@@ -34,11 +34,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
 }
 .startDate label{
     width: auto;
     align-self: center;
+}
+
+.startDatePicker{
+    width: 200px;
+    border-radius: 2rem;
 }
 
 .endDate{
@@ -46,6 +50,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.endDatePicker{
+    width: 200px;
+    border-radius: 2rem;
 }
 
 .endDate label{
@@ -59,7 +68,10 @@
     margin-bottom: 20px;
 }
 
-button{
-     width: 30%;
-     height: 35px;
+.chartBtn{
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
+    border-radius: 2rem;
+    width: 30%;
+    height: 35px;
  }

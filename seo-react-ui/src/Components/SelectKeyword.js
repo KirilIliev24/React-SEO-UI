@@ -45,7 +45,14 @@ export const SelectKeyword = () =>{
     return (
             <div className = "row centerDiv">
                 <div className = "col-lg-6 dropdownDiv">
-                    <Dropdown className = "dropDown" onChange = {word => setSelectedWord(word.label)} options = {options}  value = "Choose keyword" />
+                    <Dropdown 
+                        className = "dropDown"
+                        controlClassName='myControlClassName'
+                        placeholderClassName="myPlaceholderClassName"
+                        menuClassName='myMenuClassName'
+                        onChange = {word => setSelectedWord(word.label)} 
+                        options = {options}  
+                        value = "Choose keyword" />
                 </div>
                 <div className = "col-lg-6 buttons">
                     <button className = "getBtn" onClick = {chooseDate}>Date</button>

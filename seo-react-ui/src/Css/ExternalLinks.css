@@ -15,9 +15,10 @@
     flex-direction: column;    
 }
 
-.dropDownDiv{
+.dropDownLinksDiv{
     justify-content: center;
 }
+
 .dropDownDiv label{
     align-self: center;
     width: auto;
@@ -25,14 +26,32 @@
 
 .linksDropDown{
     margin: auto;
-    width: 250px;
-  
+    width: auto;
+    margin-bottom: 20px;
 }
 
-.extDatePicker{
-    width: 250px;
+.myControlClassExtLinks{
     height: 35px;
+    border-radius: 2rem;
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
+    
 }
+
+.myPlaceholderClassExtLinks{
+    font-size: 16px;
+    font-weight: 500;   
+}
+
+.myMenuClassExtLinks{
+    border-radius: 2rem;
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;
+    overflow: scroll;
+    overflow-x: hidden;    
+    overflow-y: visible;
+}
+
 
 .getLinksBtnDiv{
     margin-top: 10px;
@@ -44,6 +63,21 @@ td{
     height: 30px;
 }
 
+.extDatePicker{
+    width: 250px;
+    height: 35px;
+    border-radius: 2rem;
+    margin-bottom: 20px;
+}
+
 .datesRow{
     justify-content: center;
+}
+
+.getLinksBtn{
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
+    border-radius: 2rem;
+    width: 30%;
+    height: 35px;
 }

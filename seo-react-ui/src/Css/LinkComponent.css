@@ -10,12 +10,19 @@ a, p{
     overflow-wrap: break-word;
 }
 
+
+
 .navBtn{
-    background-color: cornsilk;
+    background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+    background-color:#bddbfa;    
+    border-radius: 2rem;
     width: inherit;
     border: solid black 1px;
     padding: 2px 5px;
     color: black;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: italic;
 }
 .navBtn:hover{
     text-decoration: none;

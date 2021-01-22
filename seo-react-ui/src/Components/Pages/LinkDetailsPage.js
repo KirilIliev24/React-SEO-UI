@@ -42,16 +42,20 @@ export const LinkDetailsPage = () =>{
         {
             linkDetails.map(detailObject =>{
                 setPositions(prevData => [...prevData, detailObject.position]);
-                setDates(prevData => [...prevData, detailObject.date]);
+                const date = removeTimeFromDate(detailObject.date);
+                setDates(prevData => [...prevData, date]);
                 setJs(prevData => [...prevData, detailObject.js]);
                 setCss(prevData => [...prevData, detailObject.css]);
                 setWordCount(prevData => [...prevData, detailObject.wordCount]);
             });
         }
-        
-      
     }, [linkDetails])
     
+    const removeTimeFromDate = (date) =>{
+        const onlyDate = date.split("T");
+        return onlyDate[0];
+    }
+
     useEffect(async() => {
         console.log(dataPass.dataPass.link);
         setIsLoading(true);
@@ -125,7 +129,7 @@ export const LinkDetailsPage = () =>{
                     </div>
                     <div className = "row">
                         <div className = "col-md-12 chartBtnDiv">
-                            <button onClick = {getLinksDetailsByDate}>Get data</button>
+                            <button className = "chartBtn" onClick = {getLinksDetailsByDate}>Get data</button>
                         </div>
                     </div>
                 </div>

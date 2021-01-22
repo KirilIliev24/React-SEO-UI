@@ -13,7 +13,7 @@ function App() {
     <Router>
        <Header/>
       <Route path = "/" exact >
-      <div className = "container">
+      <div className = "container appContainer">
         <div className = "row firstRow">
           <div className = "col-md-6">
             <SelectKeyword/>

@@ -7,6 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import "../Css/ExternalLinks.css"
+import { useLoading, Oval } from '@agney/react-loading'; 
 
 export const ExternalLinks = (props) =>{
 
@@ -18,6 +19,10 @@ export const ExternalLinks = (props) =>{
     const [dropDownLinks, setDropDownLinks] = useState([{value: "", label: "none"}]);
     const [linksRows, setLinksRows] = useState(0);
 
+    const { containerProps, indicatorEl } = useLoading({
+        loading: isLoading,
+        indicator: <Oval width="50" />,
+      });
 
     const {externalLinks, getExternalLinks, resetData} = useContext(LinkDetailsContext);
     const {links} = useContext(LinksContext);
@@ -26,6 +31,13 @@ export const ExternalLinks = (props) =>{
     useEffect(() => {
         getLinksList();
     }, [])
+
+    //get a list with all links
+    const getLinksList = () =>{
+        links.map((link) => {
+            setDropDownLinks(prevData => [...prevData, link.link]); 
+        });
+    }
 
     useEffect(() => {
         var linkNo = externalLinks.lenght;
@@ -46,11 +58,7 @@ export const ExternalLinks = (props) =>{
         setIsLoading(false);
     }
 
-    const getLinksList = () =>{
-        links.map((link) => {
-            setDropDownLinks(prevData => [...prevData, link.link]); 
-        });
-    }
+  
 
     const createTable = () =>{
         let table = []
@@ -82,7 +90,7 @@ export const ExternalLinks = (props) =>{
             }
                  
         <div className = "row datesRow">
-            <div className = "col-md-4 dateDiv">
+            <div className = "col-md-5 dateDiv">
                 <div><label>Date:</label></div>
                 <DatePicker 
                     className = "extDatePicker"
@@ -90,9 +98,16 @@ export const ExternalLinks = (props) =>{
                     dateFormat="P"
                     onChange = {date => setDate(date)}/>
             </div>
-            <div className = "col-md-4 dropDownDiv">
-                <label>Second link:</label>
-                <Dropdown className = "linksDropDown" onChange = {linkTwo => setSecondLink(linkTwo)} options = {dropDownLinks}  value = "Choose second link"/>
+            <div className = "col-md-5 dropDownLinksDiv">
+                <div><label>Second link:</label></div>
+                <Dropdown 
+                    className = "linksDropDown" 
+                    controlClassName='myControlClassExtLinks'
+                    placeholderClassName="myPlaceholderClassExtLinks"
+                    menuClassName='myMenuClassExtLinks'
+                    onChange = {linkTwo => setSecondLink(linkTwo)} 
+                    options = {dropDownLinks}  
+                    value = "Choose second link"/>
             </div>
           </div>
           <div className = "row">
