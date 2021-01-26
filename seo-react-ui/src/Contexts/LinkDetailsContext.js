@@ -20,7 +20,7 @@ export const LinkDetailsProvider = ({children}) =>{
     const getLinksDetails = async(link, keyword, startDate, endDate) =>{
         await axios
         .get(
-            `/SearchEngine/positions/byDatePeriod`,
+            `https://localhost:44325/SearchEngine/positions/byDatePeriod`,
             {headers: 
                 {
                     "link" : link,
@@ -41,7 +41,7 @@ export const LinkDetailsProvider = ({children}) =>{
     const getExternalLinks = async(linkOne, linkTwo, date) => {
         await axios
         .get(
-            `/SearchEngine/getLinksWithRegex`,
+            `https://localhost:44325/SearchEngine/getLinksWithRegex`,
             {headers: 
                 {
                     "url" : linkOne,
@@ -61,7 +61,7 @@ export const LinkDetailsProvider = ({children}) =>{
     const getMeaningfulText = async(link, date) =>{
         await axios
         .get(
-            `/SearchEngine/getMeaningfulText`,
+            `https://localhost:44325/SearchEngine/getMeaningfulText`,
             {headers: 
                 {
                     "url" : link,

@@ -10,7 +10,7 @@ export const LinksProvider = ({children}) =>{
     const getLinks = async(keyword, startDate, endDate) =>{
         await axios
         .get(
-            `/SearchEngine/getByKeyword/${keyword}`,
+            `https://localhost:44325/SearchEngine/getByKeyword/${keyword}`,
             {headers: 
                 {
                     "startDate": `${startDate.toLocaleDateString()}`,

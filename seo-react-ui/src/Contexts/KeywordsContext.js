@@ -14,8 +14,14 @@ export const KeywwordsProvider = ({children}) =>{
     const getAllKeywords = async() =>{
         await axios
             .get(
-                `/SearchEngine/getKeywords`,
-                {headers: {}})
+                `https://localhost:44325/SearchEngine/getKeywords`,
+                {
+                    headers: {
+                        // // 'Content-Type': 'application/json',
+                        // "Access-Control-Allow-Origin": "*",
+                        // "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+                    }
+                })
             .then((result) => {
                 const data = result.data;
                 setKeywords(data);
